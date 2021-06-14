@@ -26,7 +26,6 @@ class Fraccion(object):
 
             unaFraccion = Fraccion (num1, den1)                                  
         
-
         return unaFraccion
         
     
@@ -40,7 +39,6 @@ class Fraccion(object):
 
             unaFraccion = Fraccion (num1, den1)                                  
         
-
         return unaFraccion
 
     def __sub__ (self, otraFraccion):
@@ -52,7 +50,6 @@ class Fraccion(object):
             den1 = self.__denominador * otraFraccion.getDenom()
 
             unaFraccion = Fraccion (num1, den1)                                  
-        
 
         return unaFraccion
 
@@ -65,8 +62,7 @@ class Fraccion(object):
             den1 = self.__denominador * otraFraccion.getDenom()
 
             unaFraccion = Fraccion (num1, den1)                                  
-        
-        
+         
         return unaFraccion
 
     def __div__ (self, otraFraccion):
@@ -79,7 +75,6 @@ class Fraccion(object):
 
             unaFraccion = Fraccion (num1, den1)                                  
         
-
         return unaFraccion
 
     def __truediv__ (self, otraFraccion):
@@ -96,7 +91,6 @@ class Fraccion(object):
 
             unaFraccion = Fraccion (num1, den1)                                  
         
-
         return unaFraccion
 
     def __mul__ (self, otraFraccion):
@@ -109,7 +103,6 @@ class Fraccion(object):
 
             unaFraccion = Fraccion (num1, den1)                                  
         
-
         return unaFraccion
 
     def __rmul__ (self, otraFraccion):
@@ -129,25 +122,3 @@ class Fraccion(object):
         s = self.__numerador/self.__denominador
         s = round(s,2)          #redondeamos con dos valores fraccionarios
         return s
-
-if __name__ == '__main__':
-    unafrac = Fraccion(3,2)
-    otrafrac = Fraccion(4,5)
-    print("Fraccion1: ", unafrac.obtenerFraccionSTR())
-    print("Fraccion2: ", otrafrac.obtenerFraccionSTR())
-
-    suma = 3 + unafrac
-    print("Suma: ", suma.obtenerFraccionSTR())
-    print("Suma simplificada: ", suma.simplificar())
-
-    resta = otrafrac - unafrac
-    print("Resta: ", resta.obtenerFraccionSTR())
-    print("Resta simplificada: ", resta.simplificar())
-
-    prod = 3 * unafrac
-    print("Prod: ", prod.obtenerFraccionSTR())
-    print("Prod simplificada: ", prod.simplificar())
-
-    div = 3 / unafrac
-    print("Division: ", div.obtenerFraccionSTR())
-    print("Division simplificada: ", div.simplificar())

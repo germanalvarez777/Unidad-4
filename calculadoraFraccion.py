@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import ttk, messagebox
 from functools import partial
-import re
 
 from claseFraccion import Fraccion
 
@@ -64,28 +63,28 @@ class Calculadora(object):
         ttk.Button(mainframe, text='Limpiar', command=self.limpiar).grid(column=3, row=8, sticky=W)
 
         self.__panel.set('0')
-        print("typo del panel: ", type(self.__panel.get()))
-        #if self.__panel.get() == type(Fraccion):
-        if re.match ('^[0-9]+/[0-9]$', self.__panel.get()):
-            self.__panel.set('0')
-            print("cambio su valor")
+
 
         panelEntry.focus()
         self.__ventana.mainloop()
+        
     def ponerNUMERO(self, numero):
         if self.__operadorAux==None:
-            self.__panel.set(self.valorSET)
-            print("valor.set: ", self.__panel.get(), "tipo: ", type(self.__panel.get()))
 
             valor = self.__panel.get()
             self.__panel.set(valor+numero)          #esta concatenando los operandos              
+            
 
             #print("PONER NUMERO- valor: {}, numero: {}".format(valor, numero))
             #print("PONER NUMERO1-Self.panel: ", self.__panel.get(), "\n")
         else:
             #print("PONER NUMERO-Operador aux: ", self.__operadorAux, "\n")
             
+            self.__panel.set(self.valorSET)             #asigna el valor anterior que tenia get
+
             valor=self.__panel.get()            #asigna el valor que contiene al primer operando
+            
+            
             self.__primerOperando=int(valor)
             #print("PONER NUMERO- 1er Operando: ", self.__primerOperando, "\n")
             self.__panel.set(numero)
@@ -112,10 +111,7 @@ class Calculadora(object):
                     resultado=operando1*operando2
                 else:
                     if operacion=='/':                          
-                        try:
                             resultado=operando1/operando2
-                        except ZeroDivisionError:
-                            messagebox.showerror(title='Division por cero', message='No se permite denominador nulo!!')
 
         if type(operando1) == Fraccion or type(operando2) == Fraccion:
             #print("Operando1: ", operando1.obtenerFraccionSTR(), "operando2: ", operando2.obtenerFraccionSTR(), "operador: ", operacion)
@@ -134,7 +130,10 @@ class Calculadora(object):
 
             if self.evaluarFraccion == True:
                 self.denominador = int (self.__panel.get())
-                self.otraFraccion = Fraccion(self.numerador, self.denominador)
+                if self.denominador != 0:
+                    self.otraFraccion = Fraccion(self.numerador, self.denominador)
+                else:
+                     messagebox.showerror(title='Division por cero', message='No se permite denominador nulo!!')
 
                 #print("2-numerador: {}, Denom: {}".format(self.numerador, self.denominador))
 
@@ -163,9 +162,16 @@ class Calculadora(object):
                 
                 if self.evaluarFraccion == True:
                     self.denominador = int (self.__panel.get())
+
+                    if self.denominador != 0:
+                        self.otraFraccion = Fraccion(self.numerador, self.denominador)
+                    else:
+                        messagebox.showerror(title='Division por cero', message='No se permite denominador nulo!!')
+
                     self.unaFraccion = Fraccion(self.numerador, self.denominador)
 
-                    self.valorSET = self.__panel.get()
+                    self.valorSET = self.__panel.get()                  #resguarda en variable de clase,
+                    #el valor anterior del self.panel, para recuperarlo posteriormente
                     self.__panel.set(self.unaFraccion.obtenerFraccionSTR())
                     
                     #print("1-numerador: {}, Denom: {}".format(self.numerador, self.denominador))
@@ -200,7 +206,7 @@ class Calculadora(object):
     def limpiar (self):
         self.__operadorAux = None
         self.__operador.set('')
-        self.borrarPanel()
+        self.borrarPanel()              #self.panel.set('')
         self.__primerOperando = None
         self.__segundoOperando = None
         self.evaluarFraccion = False
@@ -208,6 +214,7 @@ class Calculadora(object):
         self.denominador = None
         self.unaFraccion = None
         self.otraFraccion = None
+        self.valorSET = 0
 
     def separarFraccion (self):
         self.numerador = int(self.__panel.get())
