@@ -1,0 +1,113 @@
+{
+    "__class__": "ManejaProvincias",
+    "provincias": [
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Buenos Aires",
+                "capital": "La Plata",
+                "cantHab": "16692031",
+                "cantDep": "135"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "San Juan",
+                "capital": "San Juan",
+                "cantHab": "781217",
+                "cantDep": "19"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Mendoza",
+                "capital": "Mendoza",
+                "cantHab": "1886029",
+                "cantDep": "18"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Cordoba",
+                "capital": "Ciudad de Cordoba",
+                "cantHab": "3506392",
+                "cantDep": "26"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Salta",
+                "capital": "Salta",
+                "cantHab": "1424397",
+                "cantDep": "23"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Santiago del Estero",
+                "capital": "Ciudad de Santiago del Estero",
+                "cantHab": "911506",
+                "cantDep": "27"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Santa Fe",
+                "capital": "Ciudad de Santa Fe",
+                "cantHab": "3369829",
+                "cantDep": "19"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "La Rioja",
+                "capital": "La Rioja",
+                "cantHab": "393928",
+                "cantDep": "14"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Jujuy",
+                "capital": "San Salvador de Jujuy",
+                "cantHab": "794842",
+                "cantDep": "17"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Chaco",
+                "capital": "Resistencia",
+                "cantHab": "39201",
+                "cantDep": "11"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Misiones",
+                "capital": "Resistencia",
+                "cantHab": "382923",
+                "cantDep": "14"
+            }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Chubut",
+                "capital": "Rawson",
+                "cantHab": "795282",
+                "cantDep": "20"
+            }
+        }
+    ]
+}
