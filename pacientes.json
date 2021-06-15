@@ -1,0 +1,45 @@
+{
+    "__class__": "ManejaPacientes",
+    "pacientes": [
+        {
+            "__class__": "Paciente",
+            "__atributos__": {
+                "nombre": "Javier",
+                "apellido": "Benitez",
+                "telefono": "264758201",
+                "alturaCM": "177",
+                "pesoKG": "82"
+            }
+        },
+        {
+            "__class__": "Paciente",
+            "__atributos__": {
+                "nombre": "Rocio",
+                "apellido": "Fernandez",
+                "telefono": "264910382",
+                "alturaCM": "166",
+                "pesoKG": "71"
+            }
+        },
+        {
+            "__class__": "Paciente",
+            "__atributos__": {
+                "nombre": "German",
+                "apellido": "Alvarez",
+                "telefono": "2645803380",
+                "alturaCM": "185",
+                "pesoKG": "79"
+            }
+        },
+        {
+            "__class__": "Paciente",
+            "__atributos__": {
+                "nombre": "Luciano",
+                "apellido": "Peralta",
+                "telefono": "264728393",
+                "alturaCM": "181",
+                "pesoKG": "88"
+            }
+        }
+    ]
+}
